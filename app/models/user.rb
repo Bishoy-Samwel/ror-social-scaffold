@@ -14,7 +14,9 @@ class User < ApplicationRecord
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'receiver_id'
 
   def send_request(user)
-    friendships.create(sender_id: id, receiver_id: user.id) unless Friendship.requested_before?(id, user.id)
+    unless Friendship.requested_before?(id, user.id)
+      friendships.create(sender_id: id, receiver_id: user.id) 
+    end
   end
 
   def pending_requests
@@ -27,6 +29,7 @@ class User < ApplicationRecord
 
   def confirm_request(user)
     friendship = inverse_friendships.find { |fs| fs.sender == user }
+    friendships.create(sender_id: user.id, receiver_id: user.id, status: true) 
     friendship.status = true
     friendship.save
   end
@@ -38,7 +41,6 @@ class User < ApplicationRecord
 
   def friends
     friends_array =
-      inverse_friendships.map { |friendship| friendship.sender if friendship.status } +
       friendships.map { |friendship| friendship.receiver if friendship.status }
     friends_array.compact
   end
