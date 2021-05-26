@@ -38,12 +38,6 @@ class User < ApplicationRecord
     friendship.destroy
   end
 
-  def friends
-    friends_array =
-      friendships.map { |friendship| friendship.receiver if friendship.status }
-    friends_array.compact
-  end
-
   def friend?(user)
     friends.include?(user)
   end
