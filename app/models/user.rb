@@ -26,12 +26,6 @@ class User < ApplicationRecord
     friendships.create(sender_id: id, receiver_id: user.id) unless Friendship.requested_before?(id, user.id)
   end
 
-  
-
-  def friend_requests
-    inverse_friendships.map { |friendship| friendship.sender unless friendship.status }
-  end
-
   def confirm_request(user)
     friendship = inverse_friendships.find { |fs| fs.sender == user }
     friendships.create(sender_id: user.id, receiver_id: user.id, status: true)
