@@ -19,8 +19,8 @@ module UserHelper
     content_tag(:ul, class: 'a class') do
       pending_requests.each do |pending_request|
         if pending_request
-          concat content_tag(:li, "Name: #{pending_request.name}
-            Email: #{pending_request.email}")
+          concat content_tag(:li, "Name: #{pending_request.receiver.name}
+            Email: #{pending_request.receiver.email}")
         end
       end
     end
