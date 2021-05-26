@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :friendships, class_name: 'Friendship', foreign_key: 'sender_id'
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'receiver_id'
 
+  has_many :confirmed_friendships, -> { where status: true }, class_name: "Friendship", foreign_key: 'sender_id'
+  has_many :friends, through: :confirmed_friendships, source: :sender
+
   def send_request(user)
     friendships.create(sender_id: id, receiver_id: user.id) unless Friendship.requested_before?(id, user.id)
   end
