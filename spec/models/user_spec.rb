@@ -32,7 +32,6 @@ RSpec.describe User, type: :model do
     expect(u1.friends.find { |item| item[:id] == u2.id }.nil?).to eql(false)
   end
 
-
   describe 'ActiveRecord associations' do
     it 'has many posts' do
       expect { should has_many(posts) }

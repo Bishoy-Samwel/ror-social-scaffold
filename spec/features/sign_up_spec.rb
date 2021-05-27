@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe 'Create new User proccess', type: :system do
-
   it 'Sign up' do
     visit root_path
     click_link_or_button 'Sign up'
