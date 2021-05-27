@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
   it 'Returns list of pending requests' do
     u1.send_request(u2)
-    pending_request = u1.pending_requests.find { |item| item[:id] == u2.id }
+    pending_request = u1.pending_friends.find { |item| item[:id] == u2.id }
 
     expect(pending_request.nil?).to eql(false)
   end
