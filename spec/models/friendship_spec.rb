@@ -9,4 +9,13 @@ RSpec.describe Friendship, type: :model do
     expect(Friendship.requested_before?(u1.id, u2.id)).to eql(true)
     expect(Friendship.requested_before?(u1.id, 3)).to eql(false)
   end
+
+  describe 'ActiveRecords Associations' do
+    it 'belong to sender' do
+      expect { should belongs_to(:sender) }
+    end
+    it 'belong to receiver' do
+      expect { should belongs_to(:receiver) }
+    end
+  end
 end
