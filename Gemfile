@@ -58,6 +58,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
