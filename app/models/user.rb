@@ -14,13 +14,13 @@ class User < ApplicationRecord
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'receiver_id'
 
   has_many :confirmed_friendships, -> { where status: true }, class_name: 'Friendship', foreign_key: 'sender_id'
-  has_many :friends, through: :confirmed_friendships, source: :sender
+  has_many :friends, through: :confirmed_friendships, source: :receiver
 
   has_many :pending_requests, -> { where status: false }, class_name: 'Friendship', foreign_key: 'sender_id'
-  has_many :pending_friends, through: :pending_requests, source: :sender
+  has_many :pending_friends, through: :pending_requests, source: :receiver
 
   has_many :inverted_friendships, -> { where status: false }, class_name: 'Friendship', foreign_key: 'receiver_id'
-  has_many :friend_requests, through: :inverted_friendships, source: :receiver
+  has_many :friend_requests, through: :inverted_friendships, source: :sender
 
   def send_request(user)
     friendships.create(sender_id: id, receiver_id: user.id) unless Friendship.requested_before?(id, user.id)
