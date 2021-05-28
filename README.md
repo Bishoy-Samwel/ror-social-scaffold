@@ -9,7 +9,7 @@
 - Ruby on Rails v5.2.4
 
 ## Live Demo
-(Heroku app)[https://glacial-brushlands-93710.herokuapp.com/]
+(Heroku app) [https://glacial-brushlands-93710.herokuapp.com/]
 
 
 ## Getting Started
