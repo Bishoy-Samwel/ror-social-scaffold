@@ -9,7 +9,7 @@
 - Ruby on Rails v5.2.4
 
 ## Live Demo
-[@Heroku app](https://glacial-brushlands-93710.herokuapp.com/)
+[Heroku app](https://glacial-brushlands-93710.herokuapp.com/)
 
 ## Getting Started
 
@@ -86,7 +86,7 @@ Deployed using Heroku
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/microverseinc/ror-social-scaffold/issues).
 
 ## Show your support
 
