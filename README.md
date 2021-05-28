@@ -2,14 +2,14 @@
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
+
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 
 ## Live Demo
-
-TBA
+(Heroku app)[https://glacial-brushlands-93710.herokuapp.com/]
 
 
 ## Getting Started
@@ -60,18 +60,28 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
-TBA
+Deployed using Heroku
 
 ## Authors
 
-TBA
+👤 **Felix Vondee**
+
+- GitHub: [@felix](https://github.com/felix-vondee)
+- Twitter: [@felix_vondee](https://twitter.com/felix_vondee)
+- LinkedIn: [Felix Vondee](https://www.linkedin.com/in/felix-vondee)
+
+👤 **Bishoy Samwel Faheem**
+
+- GitHub: [@Bishoy Samwel Faheem](https://github.com/Bishoy-Samwel)
+- LinkedIn: [Bishoy Samwel](https://www.linkedin.com/in/bishoy-samwuel-ss/)
+- Twitter: [@bisho](https://twitter.com/BishoFaheem15)
 
 ## 🤝 Contributing
 
