@@ -15,9 +15,6 @@ class CommentsController < ApplicationController
     render @post_comments
   end
 
-  def postComment
-    render json: @post_comments, status: :created 
-  end
   private
 
   def comment_params
