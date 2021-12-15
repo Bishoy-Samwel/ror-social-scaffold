@@ -3,9 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    render json: timeline_posts
+    timeline_posts
   end
-
   def create
     @post = current_user.posts.new(post_params)
 
