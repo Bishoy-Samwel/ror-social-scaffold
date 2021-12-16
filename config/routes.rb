@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   get "getPosts", to: "api#posts_index"
   get "comments/:post_id", to: "api#show_comments"
   post "comments/add/:user_id/:post_id/:content", to: "api#create_comment"
+  post 'auth/login', to: 'authentication#authenticate'
+  post 'signup', to: 'users#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
