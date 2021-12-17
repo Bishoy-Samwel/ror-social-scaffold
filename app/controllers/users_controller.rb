@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authorize_request, only: :create
-  protect_from_forgery with: :null_session, only: [:create] 
+  protect_from_forgery with: :null_session, only: [:create]
   def index
     @users = User.all
     @pending_friends = current_user.pending_requests
