@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @post = Post.new
     timeline_posts
   end
+
   def create
     @post = current_user.posts.new(post_params)
 
