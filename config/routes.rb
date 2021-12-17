@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   root 'posts#index'
 
   devise_for :users
@@ -14,5 +16,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  get "getPosts", to: "api#posts_index"
+  get "comments/:post_id", to: "api#show_comments"
+  post "comments/add/:user_id/:post_id/:content", to: "api#create_comment"
+  post 'auth/login', to: 'authentication#authenticate'
+  post 'newUser', to: 'users#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
