@@ -1,7 +1,5 @@
 class ApiController < ActionController::API
-    protect_from_forgery with: :null_session
-    protect_from_forgery unless: -> { request.format.json? } 
-  
+    skip_before_action :verify_authenticity_token
     def posts_index
       render json: timeline_posts
     end
