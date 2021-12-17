@@ -1,5 +1,5 @@
 class ApiController < ActionController::API
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   def posts_index
     render json: timeline_posts
   end
