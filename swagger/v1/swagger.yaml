@@ -3,7 +3,110 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
-paths: {}
+paths:
+  "/comments/{post_id}":
+    get:
+      summary: Retrieves a Comment
+      tags:
+      - Comments
+      - Another Tag
+      parameters:
+      - name: id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Comment found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  post_id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  created_at:
+                    type: date
+                  update_at:
+                    type: date
+                required:
+                - id
+                - user_id
+                - post_id
+                - content
+                - created_at
+                - updated_at
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  post_id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  created_at:
+                    type: date
+                  update_at:
+                    type: date
+                required:
+                - id
+                - user_id
+                - post_id
+                - content
+                - created_at
+                - updated_at
+        '404':
+          description: Comment not found
+  comments/add/{user_id}/{post_id}/{content}:
+    post:
+      summary: Create a Comment
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '201':
+          description: post listed
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                post_id:
+                  type: integer
+                user_id:
+                  type: integer
+                created_at:
+                  type: date
+                update_at:
+                  type: date
+              required:
+              - content
+          application/xml:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                post_id:
+                  type: integer
+                user_id:
+                  type: integer
+                created_at:
+                  type: date
+                update_at:
+                  type: date
+              required:
+              - content
 servers:
 - url: https://{defaultHost}
   variables:
